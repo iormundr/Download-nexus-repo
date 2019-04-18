@@ -48,7 +48,7 @@ while True:
         print(dir + " Downloading " +  data['items'][x]['downloadUrl'])
         cwd=os.getcwd()
         os.chdir(str(dir))
-        os.system('wget --user ' + str(options.user)+ ' --password ' + str(options.password)+' ' + data['items'][x]['downloadUrl'] + ' &> ' + options.repository + '.log')
+        os.system('wget --user ' + str(options.user)+ ' --password ' + str(options.password)+' ' + data['items'][x]['downloadUrl'] + ' &> /tmp/' + options.repository + '.log')
         files_downloaded+=1
         os.chdir(cwd)
         token_mem = data['continuationToken']
